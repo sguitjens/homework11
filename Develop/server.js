@@ -29,7 +29,7 @@ const getMaxID = () => {
   return max;
 }
 
-// Server routes
+// SERVER ROUTES //
 // req: ?
 // res: all saved notes as JSON, or 0 if none;
 app.get("/api/notes", function(req, res) {
@@ -62,7 +62,7 @@ app.post("/api/notes", (req, res) => {
       console.log("ERROR IN READFILE", err);
       res = false;
       console.log("POST RETURNS", false);
-      return false;
+      return res;
     }
     else {
       data = JSON.parse(data);
@@ -73,14 +73,14 @@ app.post("/api/notes", (req, res) => {
           console.log(err);
           res = false;
           console.log("POST RETURNS", false);
-          return false;
+          return res;
         }
         // else res.json({didItWOrk: true}) // I don't understand what's happening here
         else {
           console.log("DATA", data);
           res = true;
           console.log("POST RETURNS", true);
-          return true;
+          return res;
         } 
       })
     }  
@@ -120,7 +120,7 @@ app.delete("/api/notes/:id", (req, res) => {
   })
 });
 
-// HTML Routes
+// HTML ROUTES //
 app.get("/notes", function(req, res) {
   console.log("NOTES HTML ROUTE")
   // console.log("notes url ", req.url)
@@ -136,7 +136,3 @@ app.get("*", function(req, res) {
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 });
-
-
-
-// node server.js

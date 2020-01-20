@@ -2,15 +2,13 @@
 
 ## Description
 
-This is an application that can be used to write, save, and delete notes. It uses an express backend to save and retrieve note data from a JSON file. The frontend code for this was provided, and the routes were added to make the application functional.
+This is a [node](https://nodejs.org/en/) application that can be used to write, save, and delete notes. It [express](https://expressjs.com/) on the backend to save and retrieve note data from a JSON file. It uses [ajax](https://api.jquery.com/jquery.ajax/) to make the service calls. The frontend code for this was provided, and the server routes were added to make the application functional. The application saves notes to a file named `db.json` on the backend. The data is stored and retrieved using the `fs` node module.
 
 ## HTML routes:
 
   * GET `/notes` - returns the `notes.html` file.
 
   * GET `*` - returns the `index.html` file
-
-* The application saves notes to a file named `db.json` on the backend. The data is stored and retrieved using the `fs` node module.
 
 ## API routes:
 
@@ -22,8 +20,6 @@ This is an application that can be used to write, save, and delete notes. It use
 
 
 # Running the Application
-
-## Running the application
 
 * Run the application by typibg `node server.js` into the terminal, and then opening `localhost:3001` in your browser. This will show the application's main page.
 
