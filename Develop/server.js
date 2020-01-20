@@ -6,8 +6,8 @@ const app = express();
 const PORT = 3001;
 let UNIQUE_ID = "";
 
-//middleware
-app.use(express.urlencoded({ extended: true })); //req.params
+// middleware
+app.use(express.urlencoded({ extended: true })); // req.params
 app.use(express.json()); // req.body
 app.use(express.static("public")); // serves public assets
 
@@ -35,7 +35,7 @@ const getMaxID = () => {
 app.get("/api/notes", function(req, res) {
   // res = 0;
   console.log("GET NOTES ROUTE");
-  console.log(req.body);
+  // console.log(req.body);
   fs.readFile("./db/db.json", "utf8",(err,data) => {
     if(err) {
       console.log("ERROR ON GET NOTES", err);
@@ -92,7 +92,7 @@ app.post("/api/notes", (req, res) => {
 // res: return deleted note as an object, or 0 if failure
 app.delete("/api/notes/:id", (req, res) => {
   console.log("DELETE NOTES ROUTE");
-  console.log(req.params.id); // this is the id
+  // console.log(req.params.id); // this is the id
   let id = req.params.id;
   res = 0;
   fs.readFile("./db/db.json", "utf8",(err, data) => { 
@@ -104,8 +104,8 @@ app.delete("/api/notes/:id", (req, res) => {
       data = JSON.parse(data);
       data.forEach((element, index, data) => {
         // res = 0;
-        console.log("ELEMENT.ID", element.id);
-        console.log("REQ.PARAMS.ID", req.params.id);
+        // console.log("ELEMENT.ID", element.id);
+        // console.log("REQ.PARAMS.ID", req.params.id);
         if(element.id == id) {
           res = data.splice(index, 1);
           console.log("RES", res);
