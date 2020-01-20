@@ -40,13 +40,13 @@ app.get("/api/notes", function(req, res) {
     if(err) {
       console.log("ERROR ON GET NOTES", err);
       return 0;
-    }
+    };
     // console.log(data)
     res.json(JSON.parse(data)); // what is happening here? are we setting the response to JSON.parse(data) and returning it?
     return res;
     // console.log(res);
   });
-})
+});
 
 // req: takes a new note (as an object)
 // res: returns true or false
@@ -81,11 +81,11 @@ app.post("/api/notes", (req, res) => {
           res = true;
           console.log("POST RETURNS", true);
           return res;
-        } 
-      })
-    }  
-  })
-})
+        };
+      });
+    };
+  });
+});
 
 // deletes a note by ID and returns success (true) or failure (false)
 // req: an id
@@ -114,10 +114,10 @@ app.delete("/api/notes/:id", (req, res) => {
           console.log("DATA3", JSON.stringify(data));
           fs.writeFileSync("./db/db.json", JSON.stringify(data), "utf8"); // only need to write to the file if there's something to delete
           return res;
-        }
-      })
-    }
-  })
+        };
+      });
+    };
+  });
 });
 
 // HTML ROUTES //
