@@ -18,12 +18,15 @@ This is a [node](https://nodejs.org/en/) application that can be used to write, 
 
   * DELETE `/api/notes/:id` - recieves a query paramter containing the id of a note to delete. It reads all of the data from the `db.json` file, removes the note with the given `id` property, and then rewrites the notes back to the `db.json` file.
 
+# Deployed App
 
-# Steps to run the Application
+The app is deployed at this URL: https://limitless-ravine-02381.herokuapp.com/
 
-1. Download the application
+# Steps to run the Application Locally
+
+1. Download the application from GitHub
 2. Type `node server.js` into the terminal
-3. Open `localhost:3001` in your browser. This will show the application's main page.
+3. Open `localhost:3000` in your browser. This will show the application's main page.
 
 # Main Page
 
